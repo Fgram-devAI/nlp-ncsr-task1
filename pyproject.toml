@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nlp-ngram"
+version = "0.1.0"
+description = "NLP assignment: tokenization analysis, Zipf's law, and n-gram language models."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "fgram-devai" }
+]
+dependencies = [
+  "nltk>=3.8",
+  "spacy>=3.7",
+  "transformers>=4.36",
+  "torch>=2.1",
+  "matplotlib>=3.8",
+  "pandas>=2.1",
+  "jupyter>=1.0",
+  "ipykernel>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+ngram-cli = "nlp_ngram.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
